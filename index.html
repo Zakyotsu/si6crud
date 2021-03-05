@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <title>PROJET CRUD</title>
+  </head>
+  <body>
+    <h1>CRUD</h1>
+    <form action="controleur/principal.php" method="post">
+      <fieldset>
+        <legend>Choisissez une action</legend>
+        <select name="choix">
+          <option value="create">Créer un nouveau client</option>
+          <option value="read">Lire les informations d'un client</option>
+          <option value="update">Modifier les informations d'un client</option>
+          <option value="delete">Supprimer un client</option>
+          <option value="liste">Afficher la liste des clients</option>
+        </select>
+        <input type="submit" value="OK" title="valider"/>
+      </fieldset> 
+    </form>
+    <hr/>
+  </body>
+</html>
