@@ -12,7 +12,7 @@ if (isset($_POST['choix']) && !empty($_POST['choix'])) {
 	 */
 	$_SESSION['choix'] = $_POST['choix'];
 	if ($_POST['choix']=='liste') {
-		header("Location:liste.php");
+		header("Location:listeClient.php");
 	}		
 	else    {	
 		switch ($_SESSION['choix']) {
@@ -29,7 +29,7 @@ if (isset($_POST['choix']) && !empty($_POST['choix'])) {
 				$_SESSION['message'] = 'Client à supprimer';
 				break;		
 			}
-		header("Location:../vue/saisie.php");
+		header("Location:../vue/saisieClient.php");
 	}
 }
 // sinon, on le redirige vers la page d'accueil : 

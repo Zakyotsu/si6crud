@@ -22,7 +22,7 @@ elseif ($_SESSION['choix']=='delete') {
 elseif ($_SESSION['choix']=='create') {
 	$choix = 'CRÉATION';
 }
-include '../vue/vueFinale.php';
+include '../vue/vueFinaleClient.php';
 // Fermeture de la base
 $cnx = null;
 ?>

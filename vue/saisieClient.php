@@ -7,10 +7,10 @@
 		 * dans $_SESSION['message']
 		 */
 		switch ($_SESSION['choix']) {
-			case 'create' : $action = '../controleur/actionFinale.php'; break;
-			case 'read'   : $action = '../controleur/read.php'; break;
-			case 'update' : $action = '../controleur/update.php'; break;
-			case 'delete' : $action = '../controleur/update.php'; break;
+			case 'create' : $action = '../controleur/actionFinaleClient.php'; break;
+			case 'read'   : $action = '../controleur/readClient.php'; break;
+			case 'update' : $action = '../controleur/updateClient.php'; break;
+			case 'delete' : $action = '../controleur/updateClient.php'; break;
 		};
 		$message = $_SESSION['message'];
 ?>

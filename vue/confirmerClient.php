@@ -11,7 +11,7 @@
   </head>
   <body>
     <h1>Données client à <?= ($choix == 'update') ? 'Modifier' : 'Supprimer'; ?></h1>
-		<form action=<?php echo "../controleur/actionFinale.php" ?> method="post" >
+		<form action=<?php echo "../controleur/actionFinaleClient.php" ?> method="post" >
 			<fieldset>
 					<?php
 						foreach ($_SESSION['aclient'] as $key => $value) {

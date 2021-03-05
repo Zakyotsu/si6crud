@@ -11,7 +11,7 @@ include '../modele/modeleClient.php';
 $_SESSION['aclient']=read($cnx);
 if ($_SESSION['aclient']) {
 	// Appel de la vue pour modifier/supprimer et passer la main
-	include '../vue/confirmer.php';
+	include '../vue/confirmerClient.php';
 }
 else {
 	// Erreur de saisie de ncli
