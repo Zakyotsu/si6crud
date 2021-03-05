@@ -1,7 +1,7 @@
 <?php
 $dsn='mysql:host=localhost;dbname=clicom';
-$user='mysql';
-$password='mysql';
+$user='root';
+$password='';
 try {
 	$cnx = new PDO($dsn,$user,$password);
 	// Par défaut PDO désactive la simulation des requêtes préparées
