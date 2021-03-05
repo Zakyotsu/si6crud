@@ -1,0 +1,22 @@
+html {
+    width: 75%;
+    margin: auto;
+    font-family: 'K2D';
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    text-decoration: underline;
+}
+
+body {
+
+}
+
+#forms {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+}

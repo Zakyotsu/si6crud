@@ -2,23 +2,45 @@
 <html lang="fr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-    <title>PROJET CRUD</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=K2D&display=swap" rel="stylesheet">
+    <title>TP CRUD</title>
   </head>
   <body>
-    <h1>CRUD</h1>
-    <form action="controleur/principal.php" method="post">
-      <fieldset>
-        <legend>Choisissez une action</legend>
-        <select name="choix">
-          <option value="create">Créer un nouveau client</option>
-          <option value="read">Lire les informations d'un client</option>
-          <option value="update">Modifier les informations d'un client</option>
-          <option value="delete">Supprimer un client</option>
-          <option value="liste">Afficher la liste des clients</option>
-        </select>
-        <input type="submit" value="OK" title="valider"/>
-      </fieldset> 
-    </form>
+    <a href='index.html'><h1>TP CRUD</h1></a>
+    <hr/>
+    <br/>
+    <div id='forms'>
+      <div class='formElement'>
+        <form action="controleur/principalClient.php" method="post">
+            <legend>Choisissez une action pour les clients</legend>
+            <select name="choix">
+              <option value="create">Créer un nouveau client</option>
+              <option value="read">Lire les informations d'un client</option>
+              <option value="update">Modifier les informations d'un client</option>
+              <option value="delete">Supprimer un client</option>
+              <option value="liste">Afficher la liste des clients</option>
+            </select>
+            <input type="submit" value="OK" title="valider"/>
+        </form>
+      </div>
+
+      <div class='formElement'>
+        <form action="controleur/principalProduit.php" method="post"></form>
+            <legend>Choisissez une action pour les produits</legend>
+            <select name="choix">
+              <option value="create">Créer un nouveau produit</option>
+              <option value="read">Lire les informations d'un produit</option>
+              <option value="update">Modifier les informations d'un produit</option>
+              <option value="delete">Supprimer un produit</option>
+              <option value="liste">Afficher la liste des produits</option>
+            </select>
+            <input type="submit" value="OK" title="valider"/>
+        </form>
+      </div>
+    </div>
+    <br/>
     <hr/>
   </body>
 </html>
