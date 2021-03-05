@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-    <link rel="stylesheet" href="index.css"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=K2D&display=swap" rel="stylesheet">
-    <title>TP CRUD</title>
-  </head>
-  <body>
-    <a href='index.html'><h1>TP CRUD</h1></a>
-    <hr/>
-    <br/>
+<?php require 'vue/header.php'; ?>
     <div id='forms'>
       <div class='formElement'>
         <form action="controleur/principalClient.php" method="post">
@@ -36,7 +24,7 @@
               <option value="delete">Supprimer un produit</option>
               <option value="liste">Afficher la liste des produits</option>
             </select>
-            <input type="submit" value="OK" title="valider"/>
+            <input type="submit" value="OK" title="validerProduit"/>
         </form>
       </div>
     </div>

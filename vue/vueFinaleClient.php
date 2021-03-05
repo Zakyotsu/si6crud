@@ -1,14 +1,14 @@
 <?php
 	if ($_SESSION['reussi']) {
-					$message = ($choix == 'LECTURE') ? "RÉSULTAT" : "$choix RÉUSSIE";
-					$sortie = "Client : \n";
-					foreach ($_SESSION['client'] as $cle => $valeur) {
-						$sortie .= "<pre>$cle : $valeur</pre>";
-					}
+		$message = ($choix == 'LECTURE') ? "RÉSULTAT" : "$choix RÉUSSIE";
+		$sortie = "Client : \n";
+		foreach ($_SESSION['client'] as $cle => $valeur) {
+			$sortie .= "<pre>$cle : $valeur</pre>";
+		}
 	}
 	else {
-					$message = "ECHEC DE LA $choix";
-					$sortie = "Message système : ".$_SESSION['exception'];
+		$message = "ECHEC DE LA $choix";
+		$sortie = "Message système : ".$_SESSION['exception'];
 	}
 ?>
 <!DOCTYPE html>
