@@ -12,7 +12,7 @@ if (isset($_POST['choix']) && !empty($_POST['choix'])) {
 	 */
 	$_SESSION['choix'] = $_POST['choix'];
 	if ($_POST['choix']=='liste') {
-		header("Location:listeClient.php");
+		header("Location:listeProduit.php");
 	}		
 	else    {	
 		switch ($_SESSION['choix']) {
@@ -34,6 +34,6 @@ if (isset($_POST['choix']) && !empty($_POST['choix'])) {
 }
 // sinon, on le redirige vers la page d'accueil : 
 else {
-	header("../index.html");
+	header("../index.php");
 }
 ?>

@@ -15,7 +15,7 @@
       </div>
 
       <div class='formElement'>
-        <form action="controleur/principalProduit.php" method="post"></form>
+        <form action="controleur/principalProduit.php" method="post">
             <legend>Choisissez une action pour les produits</legend>
             <select name="choix">
               <option value="create">Créer un nouveau produit</option>
