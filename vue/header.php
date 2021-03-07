@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset='UTF-8'/>
     <link rel="stylesheet" href="../vue/css/index.css"/>
     <link rel="stylesheet" href="vue/css/index.css"/>
     <link rel="stylesheet" href="css/index.css"/>
@@ -13,4 +13,3 @@
   <body>
     <h1>TP CRUD</h1>
     <hr/>
-    <br/>

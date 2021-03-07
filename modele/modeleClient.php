@@ -116,17 +116,15 @@ function delete($cnx)
 	}
 }
 
-function listeClients($cnx)
-{
+//Liste entière de la base produits.
+function liste($pdo) {
 	try {
-		// En principe le '*' devrait être évité
 		$sql = "SELECT * FROM clients";
-		$stmt = $cnx->prepare($sql);
+		$stmt = $pdo->prepare($sql);
 		$stmt->execute();
 		$donnee = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $donnee;
-	}
-	catch(PDOException $e) {
+	} catch(PDOException $e) {
 		$_SESSION['exception'] = $e->getMessage()."\n";
 		return false;
 	}
