@@ -1,5 +1,5 @@
 <?php
-	$dsn='mysql:host=localhost;dbname=clicom';
+	$dsn='mysql:host=localhost;dbname=clicom;charset=utf8';
 	$user='root';
 	$password='';
 	try {

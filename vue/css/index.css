@@ -10,8 +10,9 @@ h1 {
     text-decoration: underline;
 }
 
-body {
-
+h2 {
+    text-align: center;
+    font-size: large;
 }
 
 #forms {
@@ -19,4 +20,41 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
+}
+
+table a {
+    color: black;
+    text-decoration: none;
+}
+table a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 90%;
+}
+  
+th {
+    text-align: left;
+    color: white;
+    background: #999690;
+}
+  
+tr {
+    text-align: left;
+    border: 1px solid black;
+}
+  
+tr:hover td {
+    background: #999690;
+}
+  
+tr:nth-child(even) {
+    background: #c6c3bd;
+}
+tr:nth-child(odd) {
+    background: #d6d3ce;
 }

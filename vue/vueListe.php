@@ -2,15 +2,24 @@
 
 		<h2>Liste des <?php echo $_SESSION['table'] ?>s</h2>
 
-		<?php
-			foreach ($result as $item) {
-				echo '<hr/>';
-				foreach ($item as $key => $value) {
-					echo "<pre> $key : $value </pre>";
-				}
-			}
-		?>
+		<table>
+			<!-- Définition des noms de colonnes -->
+			<tr>
+				<?php foreach($result[0] as $key => $value) { ?>
+					<th><?php echo $key ?></th>
+				<?php } ?>
+			</tr>
 
-    <hr/>
+			<!-- Peuplement du tableau -->
+			<?php foreach($result as $item) { ?>
+				<tr>
+					<?php foreach ($item as $key => $value) { ?>
+						<td><?php echo $value; ?></td>
+					<?php } ?>
+				</tr>
+			<?php } ?>
+        </table>
+		<br>
+    <hr>
   </body>
 </html>
