@@ -1,7 +1,5 @@
 <?php 
-	session_cache_limiter('private_no_expire');
-	session_start();
-	$choix = $_SESSION['choix'];
+$choix = $_SESSION['choix'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,15 +8,24 @@
     <title>PROJET CRUD</title>
   </head>
   <body>
-    <h1>Données client à <?= ($choix == 'update') ? 'Modifier' : 'Supprimer'; ?></h1>
-		<form action=<?php echo "../controleur/actionFinaleClient.php" ?> method="post" >
+    <h1>Données <?php $tableString ?> à <?= ($choix == 'update') ? 'Modifier' : 'Supprimer'; ?></h1>
+		<form action=<?php echo "../controleur/actionFinale.php" ?> method="post" >
 			<fieldset>
 					<?php
-						foreach ($_SESSION['aclient'] as $key => $value) {
-						echo "<label for='$key'>$key</label>";
-						echo "<input type='text' name='$key' id='$key' value ='$value' ";
-						echo ($key == 'ncli' or $choix != 'update') ? ' disabled >' : '>';
-						echo '<br/>';
+						if($table == 'client') {
+							foreach ($_SESSION['aclient'] as $key => $value) {
+								echo "<label for='$key'>$key</label>";
+								echo "<input type='text' name='$key' id='$key' value ='$value' ";
+								echo ($key == 'ncli' or $choix != 'update') ? ' disabled >' : '>';
+								echo '<br/>';
+							}
+						} else if($table == 'produit') {
+							foreach ($_SESSION['aproduit'] as $key => $value) {
+								echo "<label for='$key'>$key</label>";
+								echo "<input type='text' name='$key' id='$key' value ='$value' ";
+								echo ($key == 'npro' or $choix != 'update') ? ' disabled >' : '>';
+								echo '<br/>';
+							}
 						}
 					?>
 			</fieldset>
@@ -26,6 +33,6 @@
 	<input type="submit" value=<?= ($choix=='update') ? "Confirmer la modification" : "Confirmer la suppression"; ?> >		
 	</form>
     <hr/>
-    <input type="button" value="Retour à l'accueil" onClick="document.location.href='../index.html'" />
+    <input type="button" value="Retour à l'accueil" onClick="document.location.href='../index.php'" />
   </body>
 </html>

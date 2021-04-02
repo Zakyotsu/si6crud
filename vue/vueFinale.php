@@ -1,8 +1,10 @@
 <?php
+	require 'header.php';
+
 	if ($_SESSION['reussi']) {
 		$message = ($choix == 'LECTURE') ? "RÉSULTAT" : "$choix RÉUSSIE";
-		$sortie = "Client : \n";
-		foreach ($_SESSION['client'] as $cle => $valeur) {
+		$sortie = ucfirst($_SESSION['table'])." : \n";
+		foreach ($_SESSION[$table] as $cle => $valeur) {
 			$sortie .= "<pre>$cle : $valeur</pre>";
 		}
 	}
@@ -21,6 +23,6 @@
     <h1><?php echo $message; ?></h1>
     <?php echo $sortie; ?>
     <hr/>
-    <input type="button" value="Retour à l'accueil" onClick="document.location.href='../index.html'" />
+    <input type="button" value="Retour à l'accueil" onClick="document.location.href='../index.php'" />
   </body>
 </html>

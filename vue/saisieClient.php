@@ -1,4 +1,6 @@
-<?php 	
+<?php
+	require 'header.php';
+
 	session_cache_limiter('private_no_expire');
 	session_start();
 		/* Récupération de l'action à traiter 
@@ -7,10 +9,10 @@
 		 * dans $_SESSION['message']
 		 */
 		switch ($_SESSION['choix']) {
-			case 'create' : $action = '../controleur/actionFinaleClient.php'; break;
-			case 'read'   : $action = '../controleur/readClient.php'; break;
-			case 'update' : $action = '../controleur/updateClient.php'; break;
-			case 'delete' : $action = '../controleur/updateClient.php'; break;
+			case 'create' : $action = '../controleur/actionFinale.php'; break;
+			case 'read'   : $action = '../controleur/read.php'; break;
+			case 'update' : $action = '../controleur/update.php'; break;
+			case 'delete' : $action = '../controleur/update.php'; break;
 		};
 		$message = $_SESSION['message'];
 ?>
@@ -21,9 +23,8 @@
     <title>PROJET CRUD - <?php echo $message; ?> </title>
   </head>
   <body>
-	  <h1><?= $message; ?></h1>
-	<form action=<?= $action ?> method="post">
-		<fieldset>
+		<h1><?= $message; ?></h1>
+		<form action=<?= $action ?> method="post">
 			<label for="ncli">Numéro client :</label>
 			<input type="text" id="ncli" name="ncli" required >
 			<br/>
@@ -40,10 +41,10 @@
 FORMULAIRE;
 		}
 			?>
-		</fieldset>
+
 		<input type="submit" value="Valider"> 
 		<hr/>
-		<input type="button" value="Retour à l'accueil" onClick="document.location.href='../index.html'" />
+		<input type="button" value="Retour à l'accueil" onClick="document.location.href='../index.php'" />
 	</form>
   </body>
 </html>

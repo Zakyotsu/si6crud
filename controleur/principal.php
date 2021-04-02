@@ -10,25 +10,30 @@ if (isset($_GET['table']) && isset($_POST['choix'])) {
 
 	$_SESSION['table'] = $_GET['table'];
 	$_SESSION['choix'] = $_POST['choix'];
+	$tableString = ucfirst($_SESSION['table']);
 
 	if ($_POST['choix'] == 'liste') {
 		header("Location:liste.php");
 	} else {	
 		switch ($_SESSION['choix']) {
 			case 'create':
-				$_SESSION['message'] = 'Nouveau Client';
+				$_SESSION['message'] = 'Nouveau '.$tableString;
 				break;
 			case 'read':				
-				$_SESSION['message'] = 'Client à afficher';
+				$_SESSION['message'] = $tableString.' à afficher';
 				break;
 			case 'update':
-				$_SESSION['message'] = 'Client à mettre à jour';
+				$_SESSION['message'] = $tableString.' à mettre à jour';
 				break;
 			case 'delete':
-				$_SESSION['message'] = 'Client à supprimer';
+				$_SESSION['message'] = $tableString.' à supprimer';
 				break;		
 			}
-		header("Location:../vue/saisieClient.php");
+			if($_SESSION['table'] == 'client') {
+				header("Location:../vue/saisieClient.php");
+			} else if($_SESSION['table'] == 'produit') {
+				header("Location:../vue/saisieProduit.php");
+			}
 	}
 }
 // sinon, on le redirige vers la page d'accueil : 

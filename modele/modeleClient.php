@@ -14,20 +14,6 @@
  
 // Pense-bête : $stmt->debugDumpParams(); pour débugger
 
-function initClicom($cnx) {
-	
-	$query = file_get_contents("clicom.sql");
-	try {
-		$reponse = $cnx->exec($query);
-		return $reponse;
-	}
-	catch(PDOException $e) {
-		echo $e->getMessage();
-		die();
-	}
-}
-
-
 function create($cnx)
 {
 	/*
@@ -36,7 +22,7 @@ function create($cnx)
 	 */
 	 try {
 			$sql = "INSERT INTO clients VALUES (:ncli,:nom, :adresse, :localite, :cat, :compte)";
-			$stmt = $cnx->prepare($sql);
+			$stmt = $pdo->prepare($sql);
 			/*
 			 *  bindValue lie les paramètres à une valeur en précisant le type.
 			 *  on peut utiliser bindParam si plusieurs insertions sont prévues
@@ -117,10 +103,10 @@ function delete($cnx)
 }
 
 //Liste entière de la base produits.
-function liste($pdo) {
+function liste($cnx) {
 	try {
 		$sql = "SELECT * FROM clients";
-		$stmt = $pdo->prepare($sql);
+		$stmt = $cnx->prepare($sql);
 		$stmt->execute();
 		$donnee = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $donnee;
@@ -129,3 +115,4 @@ function liste($pdo) {
 		return false;
 	}
 }
+?>

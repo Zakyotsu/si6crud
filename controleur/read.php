@@ -21,7 +21,7 @@ else {
 	}
 }
 $choix = "LECTURE";
-include '../vue/vueFinaleClient.php';
+include '../vue/vueFinale.php';
 // Fermeture de la base
 $cnx = null;
 ?>

@@ -4,6 +4,7 @@
     // Connexion à la base de données
     require_once '../modele/connexion.php';
 
+    //Liste de quelle table
     $table = $_SESSION['table'];
 
     if($table == 'client') {
@@ -12,9 +13,10 @@
         include '../modele/modeleProduit.php';
     }
 
-    $result=liste($pdo);
+    //On stocke le résultat dans la session
+    $result=liste($cnx);
     $_SESSION['result'] = $result;
 
     include '../vue/vueListe.php';
-    $pdo = null;
+    $cnx = null;
 ?>
