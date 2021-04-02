@@ -14,6 +14,7 @@ require_once '../modele/connexion.php';
 // Appel du modèle pour lire les données du client à modifier/supprimer dans la base
 	include '../modele/modele'.ucfirst($_SESSION['table']).'.php';
 	$_SESSION['a'.$table]=read($cnx);
+	var_dump($_SESSION['a'.$table]);
 	if ($_SESSION['a'.$table]) {
 		// Appel de la vue pour modifier/supprimer et passer la main
 		include '../vue/confirmer.php';

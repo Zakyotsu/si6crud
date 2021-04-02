@@ -16,13 +16,6 @@
 		};
 		$message = $_SESSION['message'];
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-    <title>PROJET CRUD - <?php echo $message; ?> </title>
-  </head>
-  <body>
 		<h1><?= $message; ?></h1>
 		<form action=<?= $action ?> method="post">
 			<label for="npro">Numéro produit :</label>

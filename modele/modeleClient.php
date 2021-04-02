@@ -22,7 +22,7 @@ function create($cnx)
 	 */
 	 try {
 			$sql = "INSERT INTO clients VALUES (:ncli,:nom, :adresse, :localite, :cat, :compte)";
-			$stmt = $pdo->prepare($sql);
+			$stmt = $cnx->prepare($sql);
 			/*
 			 *  bindValue lie les paramètres à une valeur en précisant le type.
 			 *  on peut utiliser bindParam si plusieurs insertions sont prévues

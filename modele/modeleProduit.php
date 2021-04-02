@@ -2,7 +2,7 @@
 function create($cnx) {
 	 try {
 			$sql = "INSERT INTO produit VALUES (:npro, :libelle, :prix, :qstock)";
-			$stmt = $pdo->prepare($sql);
+			$stmt = $cnx->prepare($sql);
 
 			$stmt->bindValue(':npro', $_SESSION['produit']['npro'],PDO::PARAM_STR); 
 			$stmt->bindValue(':libelle', $_SESSION['produit']['libelle'],PDO::PARAM_STR);
@@ -39,18 +39,18 @@ function read($cnx) {
 function update($cnx) {
 	try  {
 		$sql = "UPDATE produit ".
-					"SET npro=:npro,".
-					"libelle=:libelle,". 
+					"SET libelle=:libelle,". 
 					"prix=:prix,". 
-					"qstock=:qstock,".
+					"qstock=:qstock ".
 				"WHERE npro=:npro";
 		$stmt = $cnx->prepare($sql);
 		// la valeur n'est pas saisie car le champ est "disabled"
-		$stmt->bindValue(':npro', $_SESSION['produit']['ncli'],PDO::PARAM_STR); 
-		// Sont éventuellement modifiés 
+		$stmt->bindValue(':npro', $_SESSION['produit']['npro'],PDO::PARAM_STR); 
+		// Sont éventuellement modifiés
+	
 		$stmt->bindValue(':libelle', $_SESSION['produit']['libelle'],PDO::PARAM_STR); 
-		$stmt->bindValue(':prix', $_SESSION['produit']['prix'],PDO::PARAM_STR); 
-		$stmt->bindValue(':qstock', $_SESSION['produit']['qstock'],PDO::PARAM_STR); 
+		$stmt->bindValue(':prix', strval($_SESSION['produit']['prix']),PDO::PARAM_STR); 
+		$stmt->bindValue(':qstock', strval($_SESSION['produit']['qstock']),PDO::PARAM_STR); 
 
 		$resultat = $stmt->execute();
 		return $resultat;
